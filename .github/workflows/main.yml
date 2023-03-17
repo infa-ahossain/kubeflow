@@ -48,4 +48,33 @@ jobs:
         env:
           KFP_ENDPOINT: https://kubeflow.kubeflow.dev.cloudtrust.rocks
           KFP_USERNAME: sbaig1@informatica.com
-          KFP_PASSWORD: iSHEZAN@12345
+          KFP_PASSWORD: iSHEZAN@123
+          
+      - name: Deploy Kubeflow Pipelines on GCP.
+        # You may pin to the exact commit or the version.
+        # uses: f6wbl6/kubeflow-pipelines-deploy-action@4abdcf497dfe0ed5f2394bf80b5ccbaeec183edc
+        uses: f6wbl6/kubeflow-pipelines-deploy-action@0.3
+        with:
+          # The endpoint where your Kubeflow UI is running.
+          kubeflow_url: https://kubeflow.kubeflow.dev.cloudtrust.rocks
+          # The full path to pipeline.py file.
+          #This must be relative to the root of the GitHub repository where the Action is triggered.
+          pipeline_file_path: test_kfp.yaml
+          # The name of the pipeline, this name will be the name of the pipeline in the Kubeflow UI.
+          pipeline_function_name: test_kfp.yaml
+          # The full path to parameters.yml which contains pipeline parameters.
+          pipeline_parameters_path: test.yaml
+          # The namespace in which the pipeline should run
+          pipeline_namespace: # optional
+          # The name of the experiment name within which the kubeflow experiment should run
+          experiment_name: # optional, default is Default
+          # The flag of running the pipeline. If true, your pipeline will run after uploading.
+          run_pipeline: # optional
+          # CRON string for scheduling recurring pipelines
+          recurring_cron_expression: # optional
+          # The IAP client id, which was specified when the kubeflow deployment where setup using IAP.
+          client_id: # optional
+        env:
+          KFP_ENDPOINT: https://kubeflow.kubeflow.dev.cloudtrust.rocks
+          KFP_USERNAME: sbaig1@informatica.com
+          KFP_PASSWORD: iSHEZAN@123
