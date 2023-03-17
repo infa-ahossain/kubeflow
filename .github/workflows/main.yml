@@ -69,7 +69,7 @@ jobs:
           # The name of the experiment name within which the kubeflow experiment should run
           #experiment_name: # optional, default is Default
           # The flag of running the pipeline. If true, your pipeline will run after uploading.
-          #run_pipeline: # optional
+          run_pipeline: true
           # CRON string for scheduling recurring pipelines
           #recurring_cron_expression: # optional
           # The IAP client id, which was specified when the kubeflow deployment where setup using IAP.
