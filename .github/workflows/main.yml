@@ -20,35 +20,35 @@ jobs:
 #           KFP_ENDPOINT: https://kubeflow.kubeflow.dev.cloudtrust.rocks
 #           KFP_USERNAME: sbaig1@informatica.com
 #           KFP_PASSWORD: iSHEZAN@123
-      - name: Kubeflow compile, deploy and run.
-        # You may pin to the exact commit or the version.
-        # uses: NikeNano/kubeflow-github-action@3f07122a54dfcde71ac28246e4059dd38a18d589
-        uses: NikeNano/kubeflow-github-action@master
-        with:
-          # The endpoint where your Kubeflow UI is running.
-          KUBEFLOW_URL: https://kubeflow.kubeflow.dev.cloudtrust.rocks
-          # The IAP client id, which was specified when the kubeflow deployment where setup using IAP.
-          #CLIENT_ID: # optional
-          # The full path name including the filename of the python file that describes the pipeline you want to run on Kubeflow.  This should be relative to the root of the GitHub repository where the Action is triggered.
-          #PIPELINE_CODE_PATH: # optional
-          # The name of the pipeline, this name will be the name of the pipeline in the Kubeflow UI.
-          #PIPELINE_FUNCTION_NAME: # optional
-          # The base64 encoded google credentials
-          #ENCODED_GOOGLE_APPLICATION_CREDENTIALS: 
-          # The path to the decoded google credentials
-          #GOOGLE_APPLICATION_CREDENTIALS: 
-          # The name of the experiment name within which the kubeflow experiment should run
-          #EXPERIMENT_NAME: # optional
-          # The namespace in which the pipeline should run
-          #PIPELINE_NAMESPACE: # optional
-          # Should github action also trigger the pipeline
-          RUN_PIPELINE: hf-t5-model-load-clr
-          # Should github action also trigger the pipeline
-          #VERSION_GITHUB_SHA: # optional
-        env:
-          KFP_ENDPOINT: https://kubeflow.kubeflow.dev.cloudtrust.rocks
-          KFP_USERNAME: sbaig1@informatica.com
-          KFP_PASSWORD: iSHEZAN@123
+#       - name: Kubeflow compile, deploy and run.
+#         # You may pin to the exact commit or the version.
+#         # uses: NikeNano/kubeflow-github-action@3f07122a54dfcde71ac28246e4059dd38a18d589
+#         uses: NikeNano/kubeflow-github-action@master
+#         with:
+#           # The endpoint where your Kubeflow UI is running.
+#           KUBEFLOW_URL: https://kubeflow.kubeflow.dev.cloudtrust.rocks
+#           # The IAP client id, which was specified when the kubeflow deployment where setup using IAP.
+#           #CLIENT_ID: # optional
+#           # The full path name including the filename of the python file that describes the pipeline you want to run on Kubeflow.  This should be relative to the root of the GitHub repository where the Action is triggered.
+#           #PIPELINE_CODE_PATH: # optional
+#           # The name of the pipeline, this name will be the name of the pipeline in the Kubeflow UI.
+#           #PIPELINE_FUNCTION_NAME: # optional
+#           # The base64 encoded google credentials
+#           #ENCODED_GOOGLE_APPLICATION_CREDENTIALS: 
+#           # The path to the decoded google credentials
+#           #GOOGLE_APPLICATION_CREDENTIALS: 
+#           # The name of the experiment name within which the kubeflow experiment should run
+#           #EXPERIMENT_NAME: # optional
+#           # The namespace in which the pipeline should run
+#           #PIPELINE_NAMESPACE: # optional
+#           # Should github action also trigger the pipeline
+#           RUN_PIPELINE: hf-t5-model-load-clr
+#           # Should github action also trigger the pipeline
+#           #VERSION_GITHUB_SHA: # optional
+#         env:
+#           KFP_ENDPOINT: https://kubeflow.kubeflow.dev.cloudtrust.rocks
+#           KFP_USERNAME: sbaig1@informatica.com
+#           KFP_PASSWORD: iSHEZAN@123
           
       - name: Deploy Kubeflow Pipelines on GCP.
         # You may pin to the exact commit or the version.
@@ -65,15 +65,15 @@ jobs:
           # The full path to parameters.yml which contains pipeline parameters.
           pipeline_parameters_path: test.yaml
           # The namespace in which the pipeline should run
-          pipeline_namespace: # optional
+          #pipeline_namespace: # optional
           # The name of the experiment name within which the kubeflow experiment should run
-          experiment_name: # optional, default is Default
+          #experiment_name: # optional, default is Default
           # The flag of running the pipeline. If true, your pipeline will run after uploading.
-          run_pipeline: # optional
+          #run_pipeline: # optional
           # CRON string for scheduling recurring pipelines
-          recurring_cron_expression: # optional
+          #recurring_cron_expression: # optional
           # The IAP client id, which was specified when the kubeflow deployment where setup using IAP.
-          client_id: # optional
+          #client_id: # optional
         env:
           KFP_ENDPOINT: https://kubeflow.kubeflow.dev.cloudtrust.rocks
           KFP_USERNAME: sbaig1@informatica.com
