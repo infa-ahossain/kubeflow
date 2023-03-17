@@ -23,7 +23,7 @@ jobs:
       - name: Kubeflow compile, deploy and run.
         # You may pin to the exact commit or the version.
         # uses: NikeNano/kubeflow-github-action@3f07122a54dfcde71ac28246e4059dd38a18d589
-        uses: actions/checkout@v2
+        uses: NikeNano/kubeflow-github-action@master
         with:
           # The endpoint where your Kubeflow UI is running.
           KUBEFLOW_URL: https://kubeflow.kubeflow.dev.cloudtrust.rocks
