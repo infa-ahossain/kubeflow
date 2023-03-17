@@ -48,4 +48,4 @@ jobs:
         env:
           KFP_ENDPOINT: https://kubeflow.kubeflow.dev.cloudtrust.rocks
           KFP_USERNAME: sbaig1@informatica.com
-          KFP_PASSWORD: iSHEZAN@123
+          KFP_PASSWORD: iSHEZAN@12345
