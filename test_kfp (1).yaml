@@ -1,0 +1,48 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: db-connection-forecasting-model-
+  annotations: {pipelines.kubeflow.org/kfp_sdk_version: 1.6.3, pipelines.kubeflow.org/pipeline_compilation_time: '2023-03-15T14:49:06.641707',
+    pipelines.kubeflow.org/pipeline_spec: '{"description": "Kubeflow pipeline of DB
+      Connection Forecast on RDS instances", "name": "DB_Connection_Forecasting_Model"}'}
+  labels: {pipelines.kubeflow.org/kfp_sdk_version: 1.6.3}
+spec:
+  entrypoint: db-connection-forecasting-model
+  templates:
+  - name: db-connection-forecasting-model
+    dag:
+      tasks:
+      - {name: db-count-forecasting, template: db-count-forecasting}
+  - name: db-count-forecasting
+    container:
+      args: []
+      command:
+      - sh
+      - -ec
+      - |
+        program_path=$(mktemp)
+        printf "%s" "$0" > "$program_path"
+        python3 -u "$program_path" "$@"
+      - |
+        def DB_Count_Forecasting():
+            print("this is a sample pipeline")
+
+        import argparse
+        _parser = argparse.ArgumentParser(prog='DB Count Forecasting', description='')
+        _parsed_args = vars(_parser.parse_args())
+
+        _outputs = DB_Count_Forecasting(**_parsed_args)
+      image: python:3.7
+    metadata:
+      labels: {pipelines.kubeflow.org/kfp_sdk_version: 1.6.3, pipelines.kubeflow.org/pipeline-sdk-type: kfp}
+      annotations: {pipelines.kubeflow.org/component_spec: '{"implementation": {"container":
+          {"args": [], "command": ["sh", "-ec", "program_path=$(mktemp)\nprintf \"%s\"
+          \"$0\" > \"$program_path\"\npython3 -u \"$program_path\" \"$@\"\n", "def
+          DB_Count_Forecasting():\n    print(\"this is a sample pipeline\")\n\nimport
+          argparse\n_parser = argparse.ArgumentParser(prog=''DB Count Forecasting'',
+          description='''')\n_parsed_args = vars(_parser.parse_args())\n\n_outputs
+          = DB_Count_Forecasting(**_parsed_args)\n"], "image": "python:3.7"}}, "name":
+          "DB Count Forecasting"}', pipelines.kubeflow.org/component_ref: '{}', pipelines.kubeflow.org/max_cache_staleness: P0D}
+  arguments:
+    parameters: []
+  serviceAccountName: pipeline-runner
