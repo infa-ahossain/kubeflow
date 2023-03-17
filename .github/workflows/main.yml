@@ -53,7 +53,7 @@ jobs:
       - name: Deploy Kubeflow Pipelines on GCP.
         # You may pin to the exact commit or the version.
         # uses: f6wbl6/kubeflow-pipelines-deploy-action@4abdcf497dfe0ed5f2394bf80b5ccbaeec183edc
-        uses: f6wbl6/kubeflow-pipelines-deploy-action@0.3
+        uses: actions/checkout@v2
         with:
           # The endpoint where your Kubeflow UI is running.
           kubeflow_url: https://kubeflow.kubeflow.dev.cloudtrust.rocks
